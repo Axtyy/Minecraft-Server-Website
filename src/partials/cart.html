@@ -1,0 +1,28 @@
+<!-- The cart drawer and the pop-up, empty. Both are per-session and open on a
+     click, so src/lib/cart.js fills them; nothing about a visitor's basket is
+     ever in the document the server sends. -->
+<!-- Phones only: account and cart as one bar pinned to the bottom edge, split
+     into two halves by a divider - the shape the site had before. The card
+     that holds both at the top of the page scrolls away with the first swipe,
+     and a phone has a thumb at the bottom of the screen. -->
+<aside class="mdock" aria-label="Account and cart">
+  <button class="mdock__who" id="dockWho" aria-label="Sign in or change account">
+    <img draggable="false" id="dockHead" src="/assets/img/steve.png" alt="">
+    <span id="dockName">Guest</span>
+  </button>
+  <span class="mdock__split" aria-hidden="true"></span>
+  <button class="mdock__cart" id="dockCart" aria-label="Open cart">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M7 18a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 18Zm10 0a2 2 0 1 0 .001 4.001A2 2 0 0 0 17 18ZM7.17 14.75l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49-1.74-.96h-.01l-1.1 2-2.48 4.48H8.53l-.12-.24L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.44c-.16.28-.25.61-.25.97a2 2 0 0 0 2 2h12v-2H7.42a.25.25 0 0 1-.25-.25Z"/></svg>
+    <span class="mdock__count" id="dockCount">0</span>
+  </button>
+</aside>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your cart" aria-hidden="true">
+  <div class="drawer__h"><h2>Your Cart</h2><span class="ex" id="dCount">0 items</span><button class="x" id="dClose" aria-label="Close cart">✕</button></div>
+  <div class="drawer__who" id="dWho" hidden></div>
+  <!-- The lines scroll; the total and CHECKOUT do not. -->
+  <div class="drawer__body" id="dBody"></div>
+  <div class="drawer__foot" id="dFoot"></div>
+</aside>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal__box box" id="modalBox"></div></div>

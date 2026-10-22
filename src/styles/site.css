@@ -1,0 +1,193 @@
+/* What the live site needs on top of the preview's stylesheet (store.css).
+ *
+ * The preview is one document that swaps views with buttons; the site is real
+ * pages with real links. So the rules here are mostly the same components
+ * answering to a link instead of a button: a filter chip that is an <a>, a
+ * pager, a search form that submits. Nothing here restyles the design. */
+@import './store.css';
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main.wrap { width: 100%; flex: 1; }
+img[data-mc] { image-rendering: pixelated; }
+.logo img { height: auto; }
+
+/* ---------- top nav ----------
+   Store is a tab like the others, and the tab you are on is the filled one:
+   the gold the Store pill used to wear, in the square shape of the rest. */
+.topnav .store, .topnav .store:not(.on) { background: none; color: var(--honey); border-radius: 8px; padding: 8px 14px; box-shadow: none; }
+.topnav .store:not(.on):hover { background: rgba(255,255,255,.06); }
+.topnav a.on, .topnav a.on:not(.store), .topnav .store.on { background: var(--honey); color: var(--honey-ink); border-radius: 8px; }
+.topnav a.on:hover, .topnav .store.on:hover { background: #ffd062; }
+:root[data-look="sky"] .topnav .store:not(.on) { background: none; color: #b56f00 !important; }
+
+/* The look switch: a track with the moon at one end and the sun at the other,
+   and a gold knob sitting on whichever one is on. Both icons are always
+   drawn, so it reads as a choice between two things before it is pressed. */
+.looksw, :root[data-look="sky"] .looksw { position: relative; width: 66px; height: 34px; padding: 0 9px; border-radius: 999px; display: flex; align-items: center; justify-content: space-between;
+  border: 1px solid rgba(255,255,255,.18); background: rgba(0,0,0,.32); color: var(--ink-3); }
+:root[data-look="sky"] .looksw { border-color: rgba(16,42,76,.25); background: rgba(16,42,76,.14); color: rgba(16,42,76,.55); }
+.looksw::before { content: ""; position: absolute; top: 3px; left: 3px; width: 26px; height: 26px; border-radius: 50%; background: var(--honey); box-shadow: 0 2px 6px rgba(0,0,0,.35); transition: translate .2s; }
+:root[data-look="sky"] .looksw::before { translate: 32px 0; }
+.looksw svg, .looksw .i-sun, :root[data-look="sky"] .looksw .i-moon { display: block; position: relative; width: 16px; height: 16px; flex: none; }
+.looksw .i-moon, :root[data-look="sky"] .looksw .i-sun { color: #2a1a00; }
+:root[data-look="sky"] .looksw .i-moon { color: inherit; }
+.looksw:hover { border-color: var(--honey); }
+
+
+
+/* ---------- links standing in for the preview's buttons ---------- */
+a.chip, a.pillbtn, a.add, a.pback, a.btn-y, a.btn-g, .seg a, .lb-boards a { text-decoration: none; }
+a.pillbtn { display: inline-block; }
+a.add { display: inline-flex; align-items: center; justify-content: center; }
+.chip.on { background: var(--c); border-color: var(--c); color: #fff; }
+.chip.on i { background: rgba(0,0,0,.2); }
+.seg a { color: var(--ink-2); border-radius: 8px; padding: 8px 16px; font-weight: 600; }
+.seg a.on { background: var(--honey); color: var(--honey-ink); }
+.seg--sm a { padding: 7px 12px; font-size: 14px; }
+.lb-boards a { border: 1px solid var(--line); background: var(--card-2); color: var(--ink); border-radius: 999px; padding: 7px 14px; font-weight: 600; font-size: 14px; }
+.lb-boards a.on { border-color: var(--honey); color: var(--honey); background: rgba(255,194,61,.1); }
+a.pod, .lbt a, .voters a { text-decoration: none; color: inherit; }
+.lbt li { cursor: default; padding: 0; }
+.lbt li a { display: grid; grid-template-columns: 40px 34px 1fr auto; gap: 12px; align-items: center; padding: 10px 6px; }
+.voters li a { display: contents; }
+.voters li a:hover b { color: var(--honey); }
+a.who { text-decoration: none; color: inherit; }
+.pback { display: inline-block; }
+
+/* ---------- store ---------- */
+/* Who is shopping is not known until the session answers - see belt() in
+   lib/render/store.js. Hidden, not removed, so nothing moves when it lands. */
+.belt[data-wait] .guest > *, .belt[data-wait] .cart small { visibility: hidden; animation: belt-show 0s 1.5s forwards; }
+@keyframes belt-show { to { visibility: visible; } }
+.cats { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 4px; }
+.cats a { text-decoration: none; border: 1px solid var(--line); background: var(--card); color: var(--ink-2); border-radius: 999px; padding: 8px 16px; font-family: var(--font-head); font-weight: 600; }
+.cats a.on { border-color: var(--honey); color: var(--honey); background: rgba(255,194,61,.1); }
+.pack .art img { max-width: 100%; object-fit: contain; }
+/* The stepper that stands in for "Add to Cart" once the package is in the
+   cart. Gold, like the details button beside it, so the pair reads as one
+   control - and not green, which is the colour of "buy this". The count sits
+   dead centre between two square buttons the same size as that "i". */
+.pack .pqty { flex: 1; display: flex; align-items: stretch; height: 44px; border: 0; border-radius: 8px; overflow: hidden; background: var(--honey); box-shadow: inset 0 -3px 0 rgba(120,70,0,.35); }
+.pack .pqty button { flex: none; width: 42px; height: 100%; padding: 0 0 3px; border: 0; background: rgba(120,70,0,.16); color: var(--honey-ink); font-family: var(--font-head); font-weight: 700; font-size: 22px; line-height: 1; display: grid; place-items: center; }
+.pack .pqty button:hover { background: rgba(120,70,0,.32); }
+.pack .pqty output { flex: 1; min-width: 0; display: grid; place-items: center; padding-bottom: 3px; font-family: var(--font-head); font-weight: 700; font-size: 19px; line-height: 1; color: var(--honey-ink); }
+.pack .pqty[hidden], .pack .add[hidden] { display: none; }
+.pack .price s { color: var(--ink-3); margin-right: 6px; }
+.packs--empty { grid-template-columns: 1fr; }
+.packs--empty p { margin: 0; padding: 40px 20px; text-align: center; color: var(--ink-3); }
+/* The phone's bottom bar: account on the left, cart on the right. Not drawn
+   at all on a wide screen, where the card at the top never leaves view for
+   long. */
+.mdock { display: none; }
+@media (max-width: 760px) {
+  .mdock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: grid; grid-template-columns: 1fr 1px 1fr; align-items: stretch;
+    padding-bottom: env(safe-area-inset-bottom, 0px); background: var(--bg-2); border-top: 1px solid var(--line); box-shadow: 0 -8px 24px rgba(0,0,0,.35); }
+  .mdock button { display: flex; align-items: center; justify-content: center; gap: 10px; min-width: 0; height: 56px; border: 0; background: none; color: var(--ink); font-family: var(--font-head); font-weight: 600; font-size: 16px; }
+  .mdock__split { background: var(--line); margin-block: 12px; }
+  .mdock__who img { width: 28px; height: 28px; flex: none; border-radius: 6px; image-rendering: pixelated; }
+  .mdock__who span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .mdock__cart { color: var(--ink-2); }
+  .mdock__count { min-width: 26px; padding: 2px 8px; border-radius: 999px; background: var(--card-2); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .mdock__cart.filled { color: var(--honey); }
+  .mdock__cart.filled .mdock__count { background: var(--honey); color: var(--honey-ink); }
+  /* Room under the page for the bar, and the toast lifted clear of it. */
+  body:has(.mdock) footer { padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px)); }
+  body:has(.mdock) .toast { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+}
+/* A total that is still being confirmed by the payment provider. */
+.pending { opacity: .45; }
+.cart[disabled] { opacity: .7; }
+/* The cart line's minus becomes a bin at one - see renderCart. */
+.qty .bin { display: grid; place-items: center; color: #ff8a8a; }
+.qty .bin:hover { background: #e5484d; color: #fff; }
+
+/* ---------- vote ---------- */
+/* The reward line on its own: no picture beside it, so one column. */
+.offer--plain { grid-template-columns: 1fr; padding: 22px 26px; }
+.voters .free b { color: var(--ink-3); font-weight: 500; }
+.voters .free em { visibility: hidden; }
+.voters .slot { width: 34px; height: 34px; border-radius: 7px; border: 2px dashed var(--line); }
+
+/* ---------- punishments ---------- */
+.bsearch button { border: 0; background: none; color: var(--ink-3); padding: 0; display: grid; place-items: center; }
+.bsearch button:hover { color: var(--honey); }
+.pager { display: flex; align-items: center; gap: 6px; }
+.pager a, .pager span { min-width: 34px; height: 34px; display: grid; place-items: center; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg-2); color: var(--ink-2); font-weight: 600; font-size: 13px; text-decoration: none; }
+.pager a:hover { border-color: var(--honey); color: var(--honey); }
+.pager .on { background: var(--honey); border-color: var(--honey); color: var(--honey-ink); }
+.pager .off { opacity: .4; }
+.aka { color: var(--ink-3); font-size: 13px; overflow-wrap: anywhere; }
+.notice { padding: 50px 24px; text-align: center; color: var(--ink-2); }
+.notice h2 { color: var(--ink); font-size: 22px; margin-bottom: 8px; }
+
+/* ---------- stats ---------- */
+.lb-tools { align-items: center; }
+.lb-tools .lb-boards { margin: 0; }
+.lb-modes { margin-bottom: 12px; }
+/* The board itself: rank, player, amount. */
+.ltab { margin-top: 16px; border-top: 1px solid var(--line); }
+.lhead, .lrow { display: grid; grid-template-columns: 76px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.lhead { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.lhead span:last-child { text-align: right; }
+.lrow { text-decoration: none; color: inherit; }
+.lrow:hover { background: var(--bg-2); }
+.lrow:hover .who span { color: var(--honey); }
+.lrow .who img { width: 36px; height: 36px; border-radius: 7px; }
+.lrank { justify-self: start; min-width: 30px; height: 30px; display: grid; place-items: center; padding: 0 8px; border-radius: 8px; font-family: var(--font-head); font-weight: 700; color: var(--ink-2); }
+.lrank.r1 { background: #ffc23d; color: #2a1a00; } .lrank.r2 { background: #c3cbd8; color: #1b2233; } .lrank.r3 { background: #d98a4e; color: #2a1400; }
+.lrow:has(.r1) .who span { color: #ffc23d; } .lrow:has(.r2) .who span { color: #c3cbd8; } .lrow:has(.r3) .who span { color: #d98a4e; }
+.lamt { text-align: right; font-family: var(--font-head); font-weight: 600; font-size: 17px; font-variant-numeric: tabular-nums; }
+.seg a { text-align: center; }
+.prof-top .body[data-mc] { image-rendering: auto; }
+.prof-acts a { text-align: center; }
+/* One player's page: who they are on the left, their numbers on the right. */
+.pwrap { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 24px; padding-block: 30px 60px; align-items: start; }
+.pside, .pmain { display: grid; gap: 20px; }
+.pinfo2 { overflow: hidden; }
+.phead { display: flex; align-items: center; gap: 16px; padding: 20px; background: var(--bg-2); border-bottom: 1px solid var(--line); }
+.phead .pface { width: 88px; height: 88px; flex: none; border-radius: 12px; border: 2px solid var(--line); background: var(--card-2); }
+.phead > div { min-width: 0; }
+.phead h2 { font-weight: 700; font-size: 24px; line-height: 1.15; overflow-wrap: anywhere; }
+.pk { display: block; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--honey); }
+.pseen { color: var(--ink-2); font-size: 13px; }
+.phead .online { font-size: 13px; }
+.prows { padding: 8px 20px; }
+.prow { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 11px 0; color: var(--ink-2); }
+.prow + .prow { border-top: 1px solid var(--line); }
+.prow b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.prow .rbadge { color: #10131f; background: var(--c); border-radius: 6px; padding: 3px 10px; font-size: 13px; font-weight: 700; letter-spacing: .03em; }
+.prow .rbadges { display: inline-flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.pinfo2 .prof-acts { padding: 4px 20px 20px; }
+.psearch { margin: 0; padding: 16px 20px 20px; }
+.mtile { position: relative; display: flex; align-items: center; gap: 18px; min-height: 104px; padding: 18px 150px 18px 22px; border-radius: 12px; overflow: hidden;
+  background: linear-gradient(100deg, #2a3170 0%, #6b5a3a 45%, #f0a400 100%); border: 1px solid var(--line); }
+.mtile > img:first-child { width: 64px; flex: none; filter: drop-shadow(0 6px 10px rgba(0,0,0,.35)); }
+.mtile b { display: block; font-family: var(--font-head); font-weight: 700; font-size: 30px; line-height: 1.1; color: #fff; text-shadow: 0 2px 6px rgba(0,0,0,.35); }
+.mtile small { color: rgba(255,255,255,.85); font-weight: 500; }
+.mtile .mbody { position: absolute; right: 26px; top: 8px; height: 150px; filter: drop-shadow(0 8px 12px rgba(0,0,0,.4)); }
+.pmain .kpi small { display: block; color: var(--ink-3); font-size: 13px; margin-bottom: 2px; }
+@media (max-width: 1080px) { .pwrap { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .mtile { padding-right: 110px; } .mtile b { font-size: 24px; } .mtile .mbody { height: 120px; right: 12px; } }
+.nf .btn-y { display: inline-block; margin-top: 18px; }
+.sform { flex-wrap: nowrap; }
+
+/* ---------- legal ---------- */
+.rtext code { background: var(--card-2); border-radius: 5px; padding: 1px 6px; }
+
+@media (max-width: 760px) {
+  /* Five tabs across, and nothing else in the row. The look switch is not a
+     tab: left in the grid it took a cell of its own and pushed the tabs onto
+     a second line, so on a phone it hangs under the bar at the right, over
+     the banner. */
+  .looksw, :root[data-look="sky"] .looksw { position: absolute; right: 12px; top: calc(100% + 10px); z-index: 4; margin: 0; }
+  .topnav .wrap > a, .topnav .wrap > a.store { padding: 9px 2px; }
+  /* Store stays last, where it is on a wide screen: the same row in the same
+     order on every device. */
+  .topnav .wrap > a.store { order: 1; }
+  .pack .pqty button { width: 38px; }
+  .seg a { flex: 1; padding: 7px 10px; font-size: 14px; }
+  .lhead, .lrow { grid-template-columns: 44px minmax(0, 1fr) auto; gap: 10px; padding: 10px 6px; }
+  .bfoot { flex-direction: column; gap: 10px; }
+  .cats a { padding: 7px 12px; font-size: 14px; }
+}

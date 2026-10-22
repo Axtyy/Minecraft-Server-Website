@@ -1,0 +1,87 @@
+{
+  "_note": "Template. Replace {name} and {email} by setting STORE_NAME and STORE_CONTACT_EMAIL, read every section, and have it checked against the law where you and your buyers are before taking payments.",
+  "intro": "These terms cover buying from this store. Playing on the network is covered by the server rules, and both apply to you at once. If you do not accept these terms, do not buy anything.",
+  "sections": [
+    {
+      "title": "Who you are buying from",
+      "body": [
+        "{name} is an independent Minecraft network. It is not a registered company, and it is run by the people who operate the network rather than by a corporate entity. You can reach us at {email}, or in our Discord.",
+        "Payment is taken by Tebex Limited, who are the merchant of record for every purchase. Your contract of sale for the payment itself is with Tebex, and they handle billing support and refunds. Your contract for what the purchase does in game is with us."
+      ]
+    },
+    {
+      "title": "What you are buying",
+      "body": [
+        "Everything in this store is a digital benefit inside our Minecraft network: ranks, rank upgrades, in-game currency and subscriptions. Nothing here is a physical product and nothing is delivered outside the network.",
+        "You are buying a licence to use that benefit on our network while the network runs and while your account remains in good standing. You are not buying ownership of anything, and nothing you buy has value outside the game.",
+        "Benefits apply to the Minecraft account you name at checkout. You are responsible for entering the right username: we deliver to the account you typed, and a purchase delivered to a mistyped account is not something we can always reverse."
+      ]
+    },
+    {
+      "title": "Delivery",
+      "body": [
+        "Purchases are usually applied within a few minutes of payment clearing. Some benefits only appear after you next join, or next change server.",
+        "If a purchase has not arrived within 24 hours, contact us at {email} or in our Discord with your username and the Tebex transaction reference and we will find it. Do not buy it a second time."
+      ]
+    },
+    {
+      "title": "Your right to cancel",
+      "body": [
+        "If you are a consumer in the UK or the EU you normally have 14 days to change your mind about something bought online and get your money back.",
+        "That right does not survive a digital item you asked to receive straight away. By buying and asking for immediate delivery, you are agreeing that the purchase is performed at once and accepting that you lose the 14 day right to cancel once it has been delivered. You are asked to confirm this at checkout, and you cannot complete a purchase without it.",
+        "Until a purchase has actually been delivered, the right still applies and you can cancel it for a full refund by contacting us or Tebex."
+      ]
+    },
+    {
+      "title": "Refunds",
+      "body": [
+        "Refunds are handled by Tebex. Ask through the receipt Tebex emailed you, or contact us in Discord and we will help you raise it.",
+        "Because these are digital benefits delivered immediately, we generally do not refund a purchase that has been delivered and used, except where the law of your country gives you a right to one, or where we failed to deliver what you bought. Nothing in these terms removes a statutory right you have as a consumer.",
+        "If we remove a benefit because you broke the server rules, that is not grounds for a refund."
+      ]
+    },
+    {
+      "title": "Chargebacks",
+      "body": [
+        "If something has gone wrong with a purchase, open a ticket and we will sort it out. A chargeback raised without contacting us first is treated as taking back payment for something you kept.",
+        "When a chargeback or payment dispute is raised, the benefits bought with that payment are removed and the Minecraft account is banned from the network until the dispute is settled and the amount is repaid."
+      ]
+    },
+    {
+      "title": "Changes to what you bought",
+      "body": [
+        "The network is a live game and it changes. Perks attached to a rank may be added, adjusted or removed as the server is balanced, and gamemodes may be added or retired. We will not remove the substance of a rank you have paid for without offering something comparable in its place.",
+        "Prices change, and a change is never applied backwards: what you paid at the time is what you paid."
+      ]
+    },
+    {
+      "title": "Your account and your conduct",
+      "body": [
+        "You are responsible for what happens on your account, including purchases made on it. Sharing an account is at your own risk.",
+        "Buying something does not exempt you from the server rules and does not entitle you to different treatment from staff. If your account is banned for breaking the rules, benefits attached to it stay unavailable for the length of the punishment, and permanent bans mean permanent loss of them.",
+        "Ranks, currency and items must not be sold, traded or transferred for real money outside this store."
+      ]
+    },
+    {
+      "title": "If the network closes",
+      "body": [
+        "If we shut the network down permanently, benefits stop working, because there is nowhere for them to work. We will give as much notice as we reasonably can.",
+        "This does not create a right to a refund of past purchases beyond what the law requires."
+      ]
+    },
+    {
+      "title": "Not affiliated with Mojang",
+      "body": [
+        "This store and this network are not affiliated with, endorsed by, or associated with Mojang AB, Microsoft, or Minecraft. We operate under Mojang's commercial usage guidelines."
+      ]
+    },
+    {
+      "title": "Governing law and changes",
+      "body": [
+        "We do not claim an exclusive court or governing law. If you buy as a consumer, the consumer protection law of the country you live in applies to your purchase, and you can bring a claim where you live.",
+        "We may change these terms; the version published here at the time of your purchase is the one that governs it. Continuing to use the store after a change means you accept the updated terms.",
+        "Last updated: 2 September 2026."
+      ]
+    }
+  ]
+}

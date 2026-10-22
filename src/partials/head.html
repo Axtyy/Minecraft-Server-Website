@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Cut from the B of the logo's BEE. The full lockup is two lines at 2:1
+     and turns to mush by 16px, which is the size that actually decides
+     whether anyone recognises the tab. -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/img/favicon-180.png">
+<!-- Gold, not the page's navy: Discord colours the edge of a link's preview
+     with this, and the site's own script repaints it to the page colour the
+     moment it loads (src/lib/chrome.js), so a phone's browser bar still
+     matches the page. -->
+<meta name="theme-color" content="#ffc23d">
+<!-- Night or day, and the seasonal theme, before first paint - so a visitor
+     who picked the day look never sees a night flash. A file rather than an
+     inline script because the site's CSP is script-src 'self', under which an
+     inline one is simply not run. Deliberately not a module: modules are
+     deferred, and this has to finish before the body is drawn. -->
+<script src="/assets/look.js?v=2"></script>
+<!-- Open Graph and Twitter tags, filled in by the server from this document's
+     own <title> and description. See lib/render/chrome.js meta(). -->
+<!--META-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://minotar.net">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">

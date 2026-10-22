@@ -1,0 +1,94 @@
+{
+  "_note": "Template. Replace {name} and {email} by setting STORE_NAME and STORE_CONTACT_EMAIL, read every section, and have it checked against the law where you and your buyers are before taking payments.",
+  "intro": "This policy explains what the {name} store and website collect, why, and who else sees it. It covers this website only. What happens in game is covered by the server rules.",
+  "sections": [
+    {
+      "title": "Who we are",
+      "body": [
+        "This website and the Minecraft network it serves are run as {name}, an independent project rather than a registered company. For anything in this policy, contact us at {email} or reach us in our Discord.",
+        "For the purposes of data protection law, the people operating {name} are the controller of the information described below, except where this policy says otherwise."
+      ]
+    },
+    {
+      "title": "What we collect, and why",
+      "body": [
+        "Your Minecraft username and edition. You type this yourself before checkout. We need it because purchases are delivered to an account in game, and there is no other way to know which one. We store it against your browsing session so the cart survives a page reload.",
+        "A session identifier. When you first load the store we set one cookie containing a random identifier. The identifier means nothing on its own; it points at a row in our database that holds your basket and the username you entered.",
+        "A record of store actions. When you sign in, add to a basket, or begin checkout, we write a row recording what happened, when, and a truncated version of your IP address. Addresses are cut to the first three blocks for IPv4 (for example 203.0.113.0) or the network prefix for IPv6 before they are stored. We keep these to investigate fraud and abuse of the store.",
+        "We do not collect your name, address, date of birth, or any payment details."
+      ]
+    },
+    {
+      "title": "Why we are allowed to hold it",
+      "body": [
+        "Your username, your edition and your session are held because we need them to do what you asked: keep a basket and deliver a purchase to the right account. In data protection terms that is processing necessary to perform a contract with you.",
+        "The store action records, including the truncated IP address, are held on the basis of our legitimate interest in preventing fraud and abuse of the store. We have kept them deliberately thin for that reason: an address is cut down before it is written, and nothing in that record identifies you beyond the username you chose to enter.",
+        "Giving us a username is not a legal requirement, but it is necessary to buy anything: without one there is no account to deliver to, and the purchase cannot go ahead."
+      ]
+    },
+    {
+      "title": "Payments",
+      "body": [
+        "We do not process payments and we never see your card. Checkout is operated by Tebex Limited, who are the merchant of record for every purchase, and who handle fulfilment, billing support and refunds.",
+        "When you check out you leave this site for Tebex. What Tebex collects there, and what they do with it, is governed by Tebex's own privacy policy, which you should read at tebex.io. We receive from Tebex only what we need to deliver your purchase: which package was bought, for which username, and whether it completed."
+      ]
+    },
+    {
+      "title": "Cookies",
+      "body": [
+        "We set one cookie. It holds the random session identifier described above, is marked HttpOnly so scripts on the page cannot read it, is restricted to this site, and expires on its own.",
+        "It is strictly necessary: without it the store cannot keep a basket or remember the username you entered. We do not use analytics cookies, advertising cookies, or any third-party tracker, and there is no analytics or tracking script anywhere on this site."
+      ]
+    },
+    {
+      "title": "The public punishment record",
+      "body": [
+        "The punishments page publishes a record of moderation on the network: the punished account's username, the kind of punishment, the reason given, the staff member who issued it, the date, and when it expires. This is published so that moderation on the network is open to the people playing on it.",
+        "It deliberately never publishes IP addresses, punishments staff marked as silent, internal staff notes, or records that name no account. If you believe an entry about you is inaccurate, contact us and we will correct or remove it."
+      ]
+    },
+    {
+      "title": "Other services this page loads",
+      "body": [
+        "Some parts of a page are fetched by your browser directly from other companies, which means those companies receive your IP address and the fact that you loaded a page here. We do not send them anything else about you.",
+        "Player head and body images come from minotar.net, nmsr.nickac.dev, mc-heads.net and textures.minecraft.net, which are sent the Minecraft username or account identifier being displayed. Fonts come from Google Fonts. Package artwork comes from Tebex's content network.",
+        "Each of these is governed by that company's own privacy policy, not this one."
+      ]
+    },
+    {
+      "title": "Where your information goes",
+      "body": [
+        "Some of the companies named above operate outside the United Kingdom and the European Economic Area, which means that when your browser fetches an image or a font from them, your IP address is handled in another country. We do not choose where they process it and we send them nothing beyond what the request itself carries.",
+        "We do not transfer anything we hold about you out of our own database to anyone, other than to Tebex in order to complete a purchase you asked for."
+      ]
+    },
+    {
+      "title": "How long we keep it",
+      "body": [
+        "Session rows are deleted when the session expires, and expired rows are cleared as they are encountered. Store action records, including the truncated IP address, are currently kept for as long as the store operates; we do not yet delete them on a fixed schedule.",
+        "The punishment record is kept for as long as the punishment is relevant to moderating the network. Staff can clear an account's spent history on request or after a successful appeal."
+      ]
+    },
+    {
+      "title": "Your rights",
+      "body": [
+        "Depending on where you live, you may have the right to ask what we hold about you, to have it corrected, to have it deleted, to object to how we use it, and to receive a copy. To exercise any of these, email {email} with the Minecraft username in question.",
+        "Because we identify people by Minecraft username rather than by real identity, we may ask you to prove control of the account before we act on a request. If you are unhappy with our response you may complain to the data protection authority for the country you live in."
+      ]
+    },
+    {
+      "title": "Children",
+      "body": [
+        "The network is open to players of any age, but purchases must be made by, or with the permission of, whoever owns the payment method. If you are under 18 you must have a parent or guardian's consent before buying anything.",
+        "If you believe a child has bought something without permission, contact us and we will work with Tebex to resolve it."
+      ]
+    },
+    {
+      "title": "Changes",
+      "body": [
+        "If we change what this site collects we will change this page, and the date below will change with it. Continuing to use the site after a change means you accept the updated policy.",
+        "Last updated: 2 September 2026."
+      ]
+    }
+  ]
+}

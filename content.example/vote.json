@@ -1,0 +1,21 @@
+{
+  "intro": "Voting is the single best thing you can do for the server that costs nothing. Every site is once every 24 hours, and each one pays out whether or not the others do.",
+  "reward": "Each vote: 1 Vote Key in-game.",
+  "sites": [
+    {
+      "name": "MinecraftServers.org",
+      "url": "https://minecraftservers.org/",
+      "note": "Once every 24 hours"
+    },
+    {
+      "name": "Minecraft-MP",
+      "url": "https://minecraft-mp.com/",
+      "note": "Once every 24 hours"
+    },
+    {
+      "name": "TopG",
+      "url": "https://topg.org/minecraft-servers/",
+      "note": "Once every 24 hours"
+    }
+  ]
+}
